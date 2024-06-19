@@ -15,7 +15,14 @@ function getComputerChoice() {
 function getHumanChoice() {
   //Capture human input
   let input = prompt("Rock, Paper, or Scissors?", "");
-  return input;
+  input = input.toLowerCase();
+  if (input === "rock" || input === "paper" || input === "scissors") {
+    return input;
+  } else {
+    alert("Please make a valid choice!");
+    return getHumanChoice();
+  }
+
 }
 let x = getHumanChoice();
 console.log(x);
