@@ -57,4 +57,23 @@ function playRound() {
   }
 }
 
-playRound();
+function playGame() {
+  for (let i=0; i<5; i++) {
+    playRound();
+    alert("Player Score: " + humanScore +" \nComputer Score: " + computerScore);
+  }
+  if (humanScore > computerScore) {
+    alert("You win the game with a score of " + humanScore + " to " + computerScore + "!")
+  } else if (computerScore > humanScore) {
+     alert("You lose the game with a score of " + humanScore + " to " + computerScore + "!")
+  }
+  if (confirm("Would you like to play again?") === true) {
+    humanScore = 0;
+    computerScore = 0;
+    playGame();
+  } else {
+    alert("Goodbye!")
+  }
+}
+
+playGame();
